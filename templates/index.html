@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>House Prices Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/styles/globals.css') }}" />
+    <style>
+      .card { max-width:700px; margin:32px auto; padding:18px; background: rgba(255,255,255,0.95); border-radius:8px }
+      .row { display:flex; gap:8px }
+      label { font-weight:600 }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>House Price Quick Estimator</h1>
+      <form method="post" action="/predict">
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+          <div>
+            <label>Overall Quality (1-10)</label>
+            <input name="OverallQual" type="number" value="6" step="1" />
+          </div>
+          <div>
+            <label>Living Area (sq ft)</label>
+            <input name="GrLivArea" type="number" value="1500" />
+          </div>
+          <div>
+            <label>Year Built</label>
+            <input name="YearBuilt" type="number" value="1980" />
+          </div>
+          <div>
+            <label>Basement Area</label>
+            <input name="TotalBsmtSF" type="number" value="800" />
+          </div>
+          <div>
+            <label>Full Baths</label>
+            <input name="FullBath" type="number" value="1" />
+          </div>
+          <div>
+            <label>Bedrooms</label>
+            <input name="BedroomAbvGr" type="number" value="3" />
+          </div>
+          <div>
+            <label>Garage Cars</label>
+            <input name="GarageCars" type="number" value="1" />
+          </div>
+        </div>
+        <div style="margin-top:10px"><button type="submit">Estimate</button></div>
+      </form>
+      {% if result %}
+        <h3>Estimated Sale Price: ${{ result }}</h3>
+      {% endif %}
+      <div style="margin-top:12px">
+        <img alt="house-design" src="https://images.unsplash.com/photo-1659353886114-9aa119aef5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" style="max-width:100%;border-radius:6px" />
+      </div>
+    </div>
+  </body>
+  </html>

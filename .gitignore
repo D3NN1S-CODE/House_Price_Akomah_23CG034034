@@ -1,0 +1,25 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.pkl
+.ipynb_checkpoints/
+
+# Data (avoid pushing large Kaggle files)
+train.csv
+test.csv
+sample_submission.csv
+
+# Node/Frontend
+node_modules/
+Static/dist/
+Static/build/
+
+# VS Code
+.vscode/
+
+# Environment
+.env
