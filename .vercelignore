@@ -1,0 +1,11 @@
+# Skip backend and large artifacts from Vercel build context
+.venv/
+app.py
+model.py
+requirements.txt
+pipeline.pkl
+model_columns.pkl
+train.csv
+test.csv
+sample_submission.csv
+Static/node_modules/

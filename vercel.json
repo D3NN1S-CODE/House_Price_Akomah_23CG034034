@@ -1,0 +1,5 @@
+{
+  "framework": "vite",
+  "buildCommand": "cd Static && npm install && npm run build",
+  "outputDirectory": "Static/build"
+}
